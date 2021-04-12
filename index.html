@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vélo'V</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="img/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <img src="img/bg_map.png" id="bg_header" onmousedown="return false" onmousemove="return false" alt="bg_map">
+        <div class="navbar">
+            <a href="#" id="logo"><img src="img/logo.png" onmousedown="return false" onmousemove="return false"
+                    alt="Logo Vélo'V"></a>
+            <i class="material-icons notif_booking">notifications</i>
+            <a href="#" id="ico_menu"><img src="img/resp.png" onmousedown="return false" onmousemove="return false"
+                    alt="Menu"></a>
+        </div>
+        <div class="menu">
+            <div id="menu_social">
+                <h1>- Social:</h1>
+                <ul>
+                    <li><i class="fab fa-facebook-square"></i><a
+                            href="https://www.facebook.com/velov.officiel/">Facebook</a></li>
+                    <li><i class="fab fa-twitter-square"></i><a href="https://twitter.com/lyonvelov">Twitter</a></li>
+                    <li><i class="fab fa-google-play"></i><a
+                            href="https://play.google.com/store/apps/details?id=com.jcdecaux.vls.lyon">PlayStore</a>
+                    </li>
+                    <li><i class="fab fa-apple"></i><a href="https://itunes.apple.com/app/id1356108037">App'Store</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="menu_company">
+                <h1>- Company:</h1>
+                <p>Velo'V</p>
+                <p>Vélo'v TSA 90003 78378 Plaisir Cedex</p>
+                <p>contact.velov@jcdecaux.com</p>
+                <p>+33130793340</p>
+            </div>
+            <div id="menu_velov">
+                <h1>- Menu:</h1>
+                <ul>
+                    <li>Accueil</li>
+                    <li>Nos offres</li>
+                    <li>Carte</li>
+                    <li>En pratique</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="notif_booking_complete">
+            <h1>réservation</h1>
+            <div class="slot">
+                <img src="img/close.svg" id="cancel_booking" onmousedown="return false" onmousemove="return false"
+                    title="Annuler la reservation">
+                <div class="slot_content">
+                    <h2><strong>Temps restant: <span id="timer"> </span></strong></h2>
+                    <p id="content_resa">station n°<span id="booking_name"></span><br><span id="booking_adresse">
+                        </span></p>
+                    <p>Nom : <span id="slname"></span></p>
+                    <p>Prénom : <span id="sfname"></span></p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SLIDER -->
+
+    <section id="slideshow">
+        <div id="slider">
+            <ul>
+                <li><img src="img/img_slid_1.png" onmousedown="return false" onmousemove="return false" alt="img1"></li>
+                <li><img src="img/img_slid_2.png" onmousedown="return false" onmousemove="return false" alt="img2"></li>
+                <li><img src="img/img_slid_3.png" onmousedown="return false" onmousemove="return false" alt="img3"></li>
+            </ul>
+            <i class="material-icons prev">keyboard_arrow_left</i>
+            <i class="material-icons next">keyboard_arrow_right</i>
+            <i class="fas fa-pause stop"></i>
+            <i class="fas fa-play play"></i>
+        </div>
+    </section>
+    <a href="#content_map"><i class="material-icons down">keyboard_arrow_down</i></a>
+    <img id="wave" src="img/wave.svg" onmousedown="return false" onmousemove="return false" alt="Wave">
+
+    <!-- MAP -->
+
+    <div id="pres_map">
+        <div id="pres_content">
+            <img src="img/close.svg" id="close_pres" onmousedown="return false" onmousemove="return false"
+                title="Fermer">
+            <h1>Vous vous trouvez sur le carte interactive de Vélo'v</h1>
+            <h3>Choisissez votre station sur la carte pour vérifier les disponibilités et ainssi réserver votre vélo
+            </h3>
+            <ul>
+                <li>
+                    <i class="green fas fa-bicycle"></i>
+                    <p>Station verte : plus de 10 vélos disponibles</p>
+                </li>
+                <li>
+                    <i class="orange fas fa-bicycle"></i>
+                    <p>Station orange : moins de 10 vélos disponibles</p>
+                </li>
+                <li>
+                    <i class="red fas fa-bicycle"></i>
+                    <p>Station rouge : aucun vélo disponible</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="content_map">
+        <a href="#" id="home"><i class="fas fa-arrow-up"></i></a>
+        <div id="map"></div>
+        <div id="infos_stations">
+            <div id="infos_content">
+                <img src="img/close.svg" id="close_info" onmousedown="return false" onmousemove="return false"
+                    title="Fermer">
+                <h2>STATION N° <span id="name_station"></span></h2>
+                <span id="adresse_station"></span>
+                <div class="icon_infos_stations">
+                    <div class="bike"><img src="img/bike.svg" id="icon_bike" onmousedown="return false"
+                            onmousemove="return false" title="Vélos disponibles"><span id="nb_available_station"></span>
+                    </div>
+                    <div class="parking"><img src="img/parking.svg" id="icon_parking" onmousedown="return false"
+                            onmousemove="return false" title="Places disponibles"><span id="nb_stands_station"></span>
+                    </div>
+                    <img src="img/bonus.svg" id="icon_bonus" onmousedown="return false" onmousemove="return false"
+                        title="Borne bonus">
+                    <img src="img/cb.svg" id="icon_cb" onmousedown="return false" onmousemove="return false"
+                        title="CB acceptée">
+                </div>
+                <div class="form_bookking">
+                    <h3>Réservation</h3>
+                    <input type="text" id="lname" placeholder="Nom *" required>
+                    <input type="text" id="fname" placeholder="Prénom *" required><br>
+                    <input type="checkbox" id="chbox" name="chbox" required><label for="chbox">En soumettant ce
+                        formulaire, j'accepte que les informations saisies soient exploitées</label>
+                    <input type="submit" id="btn_resa" value="Réserver" />
+                    <p id="error">Réservation impossible</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="canvas_content">
+        <img src="img/close.svg" id="close_canvas" onmousedown="return false" onmousemove="return false" title="Fermer">
+        <p>Signature <span id="title_canvas">- signer dans l'encart ci-dessous pour finaliser votre réservation.</span>
+        </p>
+        <canvas id="canvas" width="400">
+            "Votre navigateur n'est pas à jour!"
+        </canvas>
+        <button id="btn_valid">Valider<i class="fas fa-check"></i></button>
+        <button id="btn_clear">Recommencez<i class="fas fa-undo"></i></button>
+    </div>
+
+    <!-- JS -->
+
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <script src="https://kit.fontawesome.com/a5f0c7cf2a.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/booking.js"></script>
+    <script type="text/javascript" src="js/canvas.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript" src="js/modale.js"></script>
+    <script type="text/javascript" src="js/slider.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

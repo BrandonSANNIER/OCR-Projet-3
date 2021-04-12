@@ -1,0 +1,199 @@
+/*------------------------RESPONSIVE LAPTOP L--------------------------*/
+
+@media all and (max-width:90rem) {
+    .navbar {
+        .notif_booking {
+            margin-left: 78%;
+        }
+    }
+
+    #slideshow {
+        #slider {
+            margin: 12.5rem 12.6%;
+            .next {
+                display: none;
+            }
+    
+            .prev {
+                display: none;
+            }
+        }
+    }
+
+    #pres_map {
+        top: 58.4375rem;
+    }
+
+    #content_map {
+        #infos_stations {
+            top: 58.4375rem;
+
+            #infos_content {
+                width: 40%;
+                left: 30%;
+            }
+        }
+    }
+
+    .canvas_content {
+        height: 32.5rem;
+        top: 132vh;
+        left: 33%;
+        right: 31%;
+    }
+}
+
+/*-------------------------RESPONSIVE LAPTOP-------------------------*/
+
+@media all and (max-width:64rem) {
+    .navbar {
+        .notif_booking {
+            margin-left: 70%;
+        }
+    }
+
+    .notif_booking_complete {
+        right: 17%;
+    }
+
+    #slideshow {
+        #slider {
+            margin: 12.5rem 22%;
+        }
+    }
+
+    #pres_map {
+        top: 58.4375rem;
+
+        #pres_content {
+            margin: 22% 10% 0 10%;
+        }
+    }
+
+    #content_map {
+        #infos_stations {
+            top: 58.4375rem;
+
+            #infos_content {
+                width: 50%;
+                left: 25%;
+                top: 23vh;
+            }
+        }
+    }
+
+    .canvas_content {
+        height: 32.5rem;
+        top: 125vh;
+        left: 26%;
+        right: 23%;
+    }
+}
+
+/*-------------------------RESPONSIVE TABLETTE------------------*/
+
+@media all and (max-width: 48rem) {
+    .navbar {
+        .notif_booking {
+            margin-left: 60%;
+        }
+    }
+
+    .notif_booking_complete {
+        right: 20%;
+    }
+
+    #slideshow {
+        #slider {
+            margin: 12.5rem 13%;
+        }
+    }
+
+    #pres_map {
+        top: 58.4375rem;
+
+        #pres_content {
+            margin: 30% 5% 0 5%;
+            margin: 22% 10% 0 10%;
+        }
+    }
+
+    #content_map {
+        #infos_stations {
+            #infos_content {
+                width: 70%;
+                left: 15%;
+            }
+        }
+    }
+
+    .canvas_content {
+        left: 18%;
+        right: 14%;
+    }
+}
+
+/*-------------------------RESPONSIVE MOBILE------------------*/
+
+@media all and (max-width: 26.5625rem) {
+    .navbar {
+        .notif_booking {
+            margin-left: 45%;
+        }
+    }
+
+    #slider {
+        margin: 12.5rem 13%;
+    }
+
+    #pres_map {
+        #pres_content {
+            margin: 35% 0 0 0;
+
+            ul {
+                padding: 0 5% 0 5%;
+
+                li {
+                    p {
+                        width: 14.0625rem;
+                        margin-left: 10.3125rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .down {
+        bottom: 5.625rem;
+    }
+
+    #content_map {
+        #infos_stations {
+            #infos_content {
+                top: 10vh;
+                height: 40.625rem;
+                left: 0;
+                width: 90%;
+
+                .icon_infos_stations {
+                    flex-wrap: wrap;
+                }
+
+                .form_bookking {
+                    #btn_resa {
+                        margin: 7% 22% 0 22%;
+                    }
+                }
+            }
+        }
+    }
+
+    .canvas_content {
+        left: 0%;
+        right: 0%;
+
+        #canvas {
+            margin-left: 0;
+        }
+    }
+}
